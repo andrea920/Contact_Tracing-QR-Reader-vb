@@ -1,0 +1,12 @@
+Name: Ma. Andrea Perido
+Address: Don Galo
+Contact Number: 12456789
+Temperature: 36
+
+Gender: Female
+
+
+Vaccination: 2nd Booster
+
+Do you have any of these?
+I don't have any of these

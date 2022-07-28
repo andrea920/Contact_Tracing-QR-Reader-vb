@@ -1,0 +1,16 @@
+Name: andrea perido
+Address: Don Galo
+Contact Number: 154624698
+Temperature: 36
+
+Gender: Female
+
+
+Vaccination: Booster
+
+Do you have any of these?
+Fever
+Coughs
+Breathing Complications
+Sore Throat
+Colds
