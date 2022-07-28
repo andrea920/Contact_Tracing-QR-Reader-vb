@@ -396,20 +396,23 @@ Partial Class Form1
         'lblQrtext
         '
         Me.lblQrtext.AutoSize = True
-        Me.lblQrtext.Location = New System.Drawing.Point(470, 54)
+        Me.lblQrtext.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblQrtext.Location = New System.Drawing.Point(402, 60)
         Me.lblQrtext.Name = "lblQrtext"
-        Me.lblQrtext.Size = New System.Drawing.Size(215, 20)
+        Me.lblQrtext.Size = New System.Drawing.Size(360, 26)
         Me.lblQrtext.TabIndex = 30
-        Me.lblQrtext.Text = "Use QR Scanner to fiil this form"
+        Me.lblQrtext.Text = "Use QR Scanner to fiil the form"
         '
         'btnQRScan
         '
-        Me.btnQRScan.Location = New System.Drawing.Point(526, 454)
+        Me.btnQRScan.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnQRScan.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btnQRScan.Location = New System.Drawing.Point(504, 444)
         Me.btnQRScan.Name = "btnQRScan"
-        Me.btnQRScan.Size = New System.Drawing.Size(94, 29)
+        Me.btnQRScan.Size = New System.Drawing.Size(129, 38)
         Me.btnQRScan.TabIndex = 31
-        Me.btnQRScan.Text = "QR Scan"
-        Me.btnQRScan.UseVisualStyleBackColor = True
+        Me.btnQRScan.Text = "QR SCAN"
+        Me.btnQRScan.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -438,8 +441,11 @@ Partial Class Form1
         Me.Controls.Add(Me.tbxCnum)
         Me.Controls.Add(Me.tbxAddress)
         Me.Controls.Add(Me.tbxName)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
         Me.Name = "Form1"
-        Me.Text = "Contact Tracing"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Contact Tracing QR Reader"
         Me.gbxGender.ResumeLayout(False)
         Me.gbxGender.PerformLayout()
         Me.gbxVacc.ResumeLayout(False)
