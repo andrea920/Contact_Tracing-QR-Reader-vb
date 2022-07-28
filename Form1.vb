@@ -1,5 +1,11 @@
 ﻿Imports System.IO
+Imports AForge.Video
+Imports AForge.Video.DirectShow
+Imports ZXing
 Public Class Form1
+    Dim CamCapture As VideoCaptureDevice
+    Dim BM As Bitmap
+    Dim ChooseCam As FilterInfoCollection
     Private Sub btnSubmit_Click(sender As Object, e As EventArgs) Handles btnSubmit.Click
         Using Entry As StreamWriter = New StreamWriter(Application.StartupPath & "\PeopleEntry\" + tbxName.Text & " " + "Record.txt")
             MessageBox.Show("Data Recorded!")
@@ -47,13 +53,8 @@ Public Class Form1
             ElseIf cbxIdont.Checked Then
                 Entry.WriteLine(cbxIdont.Text)
             End If
-
-
             Entry.Close()
-
-
         End Using
-
     End Sub
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
@@ -71,4 +72,16 @@ Public Class Form1
             tbxFind.Text = DataRecord
         End If
     End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ChooseCam = New FilterInfoCollection(FilterCategory.VideoInputDevice)
+
+        For Each filterInfo As FilterInfo In ChooseCam
+            cbCamDevice.Items.Add(filterInfo.Name)
+        Next
+
+        cbCamDevice.SelectedIndex = 0
+    End Sub
+
+
 End Class

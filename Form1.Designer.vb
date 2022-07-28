@@ -55,6 +55,7 @@ Partial Class Form1
         Me.pictBxQRCapture = New System.Windows.Forms.PictureBox()
         Me.lblQrtext = New System.Windows.Forms.Label()
         Me.btnQRScan = New System.Windows.Forms.Button()
+        Me.cbCamDevice = New System.Windows.Forms.ComboBox()
         Me.gbxGender.SuspendLayout()
         Me.gbxVacc.SuspendLayout()
         Me.gbxQuestion.SuspendLayout()
@@ -397,7 +398,7 @@ Partial Class Form1
         '
         Me.lblQrtext.AutoSize = True
         Me.lblQrtext.Font = New System.Drawing.Font("MS Reference Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.lblQrtext.Location = New System.Drawing.Point(402, 60)
+        Me.lblQrtext.Location = New System.Drawing.Point(401, 22)
         Me.lblQrtext.Name = "lblQrtext"
         Me.lblQrtext.Size = New System.Drawing.Size(360, 26)
         Me.lblQrtext.TabIndex = 30
@@ -414,12 +415,21 @@ Partial Class Form1
         Me.btnQRScan.Text = "QR SCAN"
         Me.btnQRScan.UseVisualStyleBackColor = False
         '
+        'cbCamDevice
+        '
+        Me.cbCamDevice.FormattingEnabled = True
+        Me.cbCamDevice.Location = New System.Drawing.Point(452, 58)
+        Me.cbCamDevice.Name = "cbCamDevice"
+        Me.cbCamDevice.Size = New System.Drawing.Size(232, 28)
+        Me.cbCamDevice.TabIndex = 32
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCoral
         Me.ClientSize = New System.Drawing.Size(1251, 720)
+        Me.Controls.Add(Me.cbCamDevice)
         Me.Controls.Add(Me.btnQRScan)
         Me.Controls.Add(Me.lblQrtext)
         Me.Controls.Add(Me.pictBxQRCapture)
@@ -491,4 +501,5 @@ Partial Class Form1
     Friend WithEvents pictBxQRCapture As PictureBox
     Friend WithEvents lblQrtext As Label
     Friend WithEvents btnQRScan As Button
+    Friend WithEvents cbCamDevice As ComboBox
 End Class
