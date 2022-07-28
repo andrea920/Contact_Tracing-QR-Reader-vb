@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.tbxName = New System.Windows.Forms.TextBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.tbxAddress = New System.Windows.Forms.TextBox()
@@ -56,6 +57,7 @@ Partial Class Form1
         Me.lblQrtext = New System.Windows.Forms.Label()
         Me.btnQRScan = New System.Windows.Forms.Button()
         Me.cbCamDevice = New System.Windows.Forms.ComboBox()
+        Me.TimeScanner = New System.Windows.Forms.Timer(Me.components)
         Me.gbxGender.SuspendLayout()
         Me.gbxVacc.SuspendLayout()
         Me.gbxQuestion.SuspendLayout()
@@ -423,6 +425,10 @@ Partial Class Form1
         Me.cbCamDevice.Size = New System.Drawing.Size(232, 28)
         Me.cbCamDevice.TabIndex = 32
         '
+        'TimeScanner
+        '
+        Me.TimeScanner.Interval = 1000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -502,4 +508,5 @@ Partial Class Form1
     Friend WithEvents lblQrtext As Label
     Friend WithEvents btnQRScan As Button
     Friend WithEvents cbCamDevice As ComboBox
+    Friend WithEvents TimeScanner As Timer
 End Class

@@ -94,5 +94,7 @@ Public Class Form1
         pictBxQRCapture.Image = TryCast(EventArgs.Frame.Clone(), Bitmap)
     End Sub
 
+    Private Sub TimeScanner_Tick(sender As Object, e As EventArgs) Handles TimeScanner.Tick
 
+    End Sub
 End Class
