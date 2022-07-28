@@ -83,5 +83,16 @@ Public Class Form1
         cbCamDevice.SelectedIndex = 0
     End Sub
 
+    Private Sub btnQRScan_Click(sender As Object, e As EventArgs) Handles btnQRScan.Click
+        CamCapture = New VideoCaptureDevice(ChooseCam(cbCamDevice.SelectedIndex).MonikerString)
+        AddHandler CamCapture.NewFrame, New NewFrameEventHandler(AddressOf CamDevice_NewFrame)
+        CamCapture.Start()
+    End Sub
+
+    Private Sub CamDevice_NewFrame(sender As Object, EventArgs As NewFrameEventArgs)
+        BM = CType(EventArgs.Frame.Clone(), Bitmap)
+        pictBxQRCapture.Image = TryCast(EventArgs.Frame.Clone(), Bitmap)
+    End Sub
+
 
 End Class
