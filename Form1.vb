@@ -28,12 +28,6 @@ Public Class Form1
                 Entry.WriteLine(vbCrLf & gbxVacc.Text + " " + radNo.Text & vbCrLf)
             End If
 
-            If radYes.Checked = True Then
-                Entry.WriteLine(gbxTypeVacc.Text + " " + radFullVac.Text & vbCrLf)
-            Else
-                Entry.WriteLine(vbCrLf & gbxTypeVacc.Text + " " + radBooster.Text & vbCrLf)
-            End If
-
             Entry.WriteLine(gbxQuestion.Text)
             If cbxFever.Checked = True Then
                 Entry.WriteLine(cbxFever.Text)
@@ -58,8 +52,6 @@ Public Class Form1
         radFemale.Checked = False
         radYes.Checked = False
         radNo.Checked = False
-        radFullVac.Checked = False
-        radBooster.Checked = False
     End Sub
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
@@ -113,11 +105,11 @@ Public Class Form1
                 tbxTemp.Text = MyData(3)
                 Gender(MyData(4), radFemale, radMale)
                 Vaccine(MyData(5), radNo, radYes)
-                'TimeScanner.Stop()
+                HaveAny(MyData(6), cbxIdont, cbxFever, cbxCoughs, cbxBreathComp, cbxColds, cbxSorethroat)
+                TimeScanner.Stop()
             End If
         End If
     End Sub
-
     Public Sub Gender(myval, myvar, myvar1)
         If myval = " Female " Then
             myvar.Checked = True
@@ -132,8 +124,15 @@ Public Class Form1
             myvar1.Checked = True
         End If
     End Sub
-
-
-
-
+    Public Sub HaveAny(myval, myvar, myvar1, myvar2, myvar3, myvar4, myvar5)
+        If myval = " Fever " Then
+            myvar1.Checked = True
+            myvar2.Checked = True
+            myvar3.Checked = True
+            myvar4.Checked = True
+            myvar5.Checked = True
+        Else
+            myvar.Checked = True
+        End If
+    End Sub
 End Class
