@@ -112,9 +112,17 @@ Public Class Form1
                 tbxAddress.Text = MyData(1)
                 tbxCnum.Text = MyData(2)
                 tbxTemp.Text = MyData(3)
-
+                Gender(MyData(4), radFemale, radMale)
                 'TimeScanner.Stop()
             End If
+        End If
+    End Sub
+
+    Public Sub Gender(myval, myvar, myvar1)
+        If myval = " Female " Then
+            myvar.Checked = True
+        Else
+            myvar1.Checked = True
         End If
     End Sub
 
