@@ -106,7 +106,8 @@ Public Class Form1
         Dim CamResult As Result = CamReader.Decode(DirectCast(pictBxQRCapture.Image, Bitmap))
         If pictBxQRCapture.Image IsNot Nothing Then
             If CamResult IsNot Nothing Then
-                tbxName.Text = ToString()
+                Dim ScannedInfo As String = CamResult.ToString()
+                tbxName.Text = ScannedInfo
                 'TimeScanner.Stop()
             End If
         End If
