@@ -35,8 +35,8 @@ Partial Class Form1
         Me.radFemale = New System.Windows.Forms.RadioButton()
         Me.radMale = New System.Windows.Forms.RadioButton()
         Me.gbxVacc = New System.Windows.Forms.GroupBox()
-        Me.radNotyet = New System.Windows.Forms.RadioButton()
-        Me.rad1dose = New System.Windows.Forms.RadioButton()
+        Me.radNo = New System.Windows.Forms.RadioButton()
+        Me.radYes = New System.Windows.Forms.RadioButton()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.cbxFever = New System.Windows.Forms.CheckBox()
         Me.gbxQuestion = New System.Windows.Forms.GroupBox()
@@ -55,13 +55,14 @@ Partial Class Form1
         Me.btnQRScan = New System.Windows.Forms.Button()
         Me.cbCamDevice = New System.Windows.Forms.ComboBox()
         Me.TimeScanner = New System.Windows.Forms.Timer(Me.components)
-        Me.rad2dose = New System.Windows.Forms.RadioButton()
+        Me.gbxTypeVacc = New System.Windows.Forms.GroupBox()
+        Me.radFullVac = New System.Windows.Forms.RadioButton()
         Me.radBooster = New System.Windows.Forms.RadioButton()
-        Me.rad2booster = New System.Windows.Forms.RadioButton()
         Me.gbxGender.SuspendLayout()
         Me.gbxVacc.SuspendLayout()
         Me.gbxQuestion.SuspendLayout()
         CType(Me.pictBxQRCapture, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxTypeVacc.SuspendLayout()
         Me.SuspendLayout()
         '
         'tbxName
@@ -141,7 +142,7 @@ Partial Class Form1
         Me.gbxGender.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.gbxGender.Location = New System.Drawing.Point(27, 240)
         Me.gbxGender.Name = "gbxGender"
-        Me.gbxGender.Size = New System.Drawing.Size(294, 72)
+        Me.gbxGender.Size = New System.Drawing.Size(289, 79)
         Me.gbxGender.TabIndex = 20
         Me.gbxGender.TabStop = False
         Me.gbxGender.Text = "Gender:"
@@ -171,48 +172,45 @@ Partial Class Form1
         'gbxVacc
         '
         Me.gbxVacc.BackColor = System.Drawing.Color.Violet
-        Me.gbxVacc.Controls.Add(Me.rad2booster)
-        Me.gbxVacc.Controls.Add(Me.radBooster)
-        Me.gbxVacc.Controls.Add(Me.rad2dose)
-        Me.gbxVacc.Controls.Add(Me.radNotyet)
-        Me.gbxVacc.Controls.Add(Me.rad1dose)
+        Me.gbxVacc.Controls.Add(Me.radNo)
+        Me.gbxVacc.Controls.Add(Me.radYes)
         Me.gbxVacc.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.gbxVacc.Location = New System.Drawing.Point(31, 335)
         Me.gbxVacc.Name = "gbxVacc"
-        Me.gbxVacc.Size = New System.Drawing.Size(289, 121)
+        Me.gbxVacc.Size = New System.Drawing.Size(289, 79)
         Me.gbxVacc.TabIndex = 21
         Me.gbxVacc.TabStop = False
         Me.gbxVacc.Text = "Vaccination:"
         '
-        'radNotyet
+        'radNo
         '
-        Me.radNotyet.AutoSize = True
-        Me.radNotyet.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.radNotyet.Location = New System.Drawing.Point(94, 86)
-        Me.radNotyet.Name = "radNotyet"
-        Me.radNotyet.Size = New System.Drawing.Size(79, 24)
-        Me.radNotyet.TabIndex = 10
-        Me.radNotyet.TabStop = True
-        Me.radNotyet.Text = "Not yet"
-        Me.radNotyet.UseVisualStyleBackColor = True
+        Me.radNo.AutoSize = True
+        Me.radNo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.radNo.Location = New System.Drawing.Point(188, 26)
+        Me.radNo.Name = "radNo"
+        Me.radNo.Size = New System.Drawing.Size(50, 24)
+        Me.radNo.TabIndex = 10
+        Me.radNo.TabStop = True
+        Me.radNo.Text = "No"
+        Me.radNo.UseVisualStyleBackColor = True
         '
-        'rad1dose
+        'radYes
         '
-        Me.rad1dose.AutoSize = True
-        Me.rad1dose.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.rad1dose.Location = New System.Drawing.Point(28, 26)
-        Me.rad1dose.Name = "rad1dose"
-        Me.rad1dose.Size = New System.Drawing.Size(87, 24)
-        Me.rad1dose.TabIndex = 6
-        Me.rad1dose.TabStop = True
-        Me.rad1dose.Text = "1st Dose"
-        Me.rad1dose.UseVisualStyleBackColor = True
+        Me.radYes.AutoSize = True
+        Me.radYes.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.radYes.Location = New System.Drawing.Point(83, 26)
+        Me.radYes.Name = "radYes"
+        Me.radYes.Size = New System.Drawing.Size(51, 24)
+        Me.radYes.TabIndex = 6
+        Me.radYes.TabStop = True
+        Me.radYes.Text = "Yes"
+        Me.radYes.UseVisualStyleBackColor = True
         '
         'btnSubmit
         '
         Me.btnSubmit.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnSubmit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.btnSubmit.Location = New System.Drawing.Point(93, 635)
+        Me.btnSubmit.Location = New System.Drawing.Point(96, 697)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(99, 43)
         Me.btnSubmit.TabIndex = 24
@@ -240,7 +238,7 @@ Partial Class Form1
         Me.gbxQuestion.Controls.Add(Me.cbxSorethroat)
         Me.gbxQuestion.Controls.Add(Me.cbxFever)
         Me.gbxQuestion.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.gbxQuestion.Location = New System.Drawing.Point(28, 483)
+        Me.gbxQuestion.Location = New System.Drawing.Point(31, 545)
         Me.gbxQuestion.Name = "gbxQuestion"
         Me.gbxQuestion.Size = New System.Drawing.Size(294, 120)
         Me.gbxQuestion.TabIndex = 22
@@ -305,7 +303,7 @@ Partial Class Form1
         '
         Me.cbxIdont.AutoSize = True
         Me.cbxIdont.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.cbxIdont.Location = New System.Drawing.Point(44, 609)
+        Me.cbxIdont.Location = New System.Drawing.Point(47, 671)
         Me.cbxIdont.Name = "cbxIdont"
         Me.cbxIdont.Size = New System.Drawing.Size(199, 24)
         Me.cbxIdont.TabIndex = 23
@@ -391,48 +389,50 @@ Partial Class Form1
         '
         Me.TimeScanner.Interval = 1000
         '
-        'rad2dose
+        'gbxTypeVacc
         '
-        Me.rad2dose.AutoSize = True
-        Me.rad2dose.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.rad2dose.Location = New System.Drawing.Point(28, 56)
-        Me.rad2dose.Name = "rad2dose"
-        Me.rad2dose.Size = New System.Drawing.Size(93, 24)
-        Me.rad2dose.TabIndex = 11
-        Me.rad2dose.TabStop = True
-        Me.rad2dose.Text = "2nd Dose"
-        Me.rad2dose.UseVisualStyleBackColor = True
+        Me.gbxTypeVacc.BackColor = System.Drawing.Color.Violet
+        Me.gbxTypeVacc.Controls.Add(Me.radBooster)
+        Me.gbxTypeVacc.Controls.Add(Me.radFullVac)
+        Me.gbxTypeVacc.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.gbxTypeVacc.Location = New System.Drawing.Point(31, 444)
+        Me.gbxTypeVacc.Name = "gbxTypeVacc"
+        Me.gbxTypeVacc.Size = New System.Drawing.Size(289, 79)
+        Me.gbxTypeVacc.TabIndex = 33
+        Me.gbxTypeVacc.TabStop = False
+        Me.gbxTypeVacc.Text = "Type of Vaccination:"
+        '
+        'radFullVac
+        '
+        Me.radFullVac.AutoSize = True
+        Me.radFullVac.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.radFullVac.Location = New System.Drawing.Point(16, 35)
+        Me.radFullVac.Name = "radFullVac"
+        Me.radFullVac.Size = New System.Drawing.Size(136, 24)
+        Me.radFullVac.TabIndex = 0
+        Me.radFullVac.TabStop = True
+        Me.radFullVac.Text = "Fully Vaccinated"
+        Me.radFullVac.UseVisualStyleBackColor = True
         '
         'radBooster
         '
         Me.radBooster.AutoSize = True
         Me.radBooster.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.radBooster.Location = New System.Drawing.Point(155, 26)
+        Me.radBooster.Location = New System.Drawing.Point(188, 35)
         Me.radBooster.Name = "radBooster"
         Me.radBooster.Size = New System.Drawing.Size(81, 24)
-        Me.radBooster.TabIndex = 11
+        Me.radBooster.TabIndex = 0
         Me.radBooster.TabStop = True
         Me.radBooster.Text = "Booster"
         Me.radBooster.UseVisualStyleBackColor = True
-        '
-        'rad2booster
-        '
-        Me.rad2booster.AutoSize = True
-        Me.rad2booster.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.rad2booster.Location = New System.Drawing.Point(155, 56)
-        Me.rad2booster.Name = "rad2booster"
-        Me.rad2booster.Size = New System.Drawing.Size(110, 24)
-        Me.rad2booster.TabIndex = 11
-        Me.rad2booster.TabStop = True
-        Me.rad2booster.Text = "2nd Booster"
-        Me.rad2booster.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightCoral
-        Me.ClientSize = New System.Drawing.Size(1251, 720)
+        Me.ClientSize = New System.Drawing.Size(1251, 784)
+        Me.Controls.Add(Me.gbxTypeVacc)
         Me.Controls.Add(Me.cbCamDevice)
         Me.Controls.Add(Me.btnQRScan)
         Me.Controls.Add(Me.lblQrtext)
@@ -467,6 +467,8 @@ Partial Class Form1
         Me.gbxQuestion.ResumeLayout(False)
         Me.gbxQuestion.PerformLayout()
         CType(Me.pictBxQRCapture, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxTypeVacc.ResumeLayout(False)
+        Me.gbxTypeVacc.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -484,7 +486,7 @@ Partial Class Form1
     Friend WithEvents radFemale As RadioButton
     Friend WithEvents radMale As RadioButton
     Friend WithEvents gbxVacc As GroupBox
-    Friend WithEvents radNotyet As RadioButton
+    Friend WithEvents radNo As RadioButton
     Friend WithEvents btnSubmit As Button
     Friend WithEvents cbxFever As CheckBox
     Friend WithEvents gbxQuestion As GroupBox
@@ -503,8 +505,8 @@ Partial Class Form1
     Friend WithEvents btnQRScan As Button
     Friend WithEvents cbCamDevice As ComboBox
     Friend WithEvents TimeScanner As Timer
-    Friend WithEvents rad1dose As RadioButton
-    Friend WithEvents rad2booster As RadioButton
+    Friend WithEvents radYes As RadioButton
+    Friend WithEvents gbxTypeVacc As GroupBox
     Friend WithEvents radBooster As RadioButton
-    Friend WithEvents rad2dose As RadioButton
+    Friend WithEvents radFullVac As RadioButton
 End Class

@@ -22,18 +22,17 @@ Public Class Form1
                 Entry.WriteLine(vbCrLf & gbxGender.Text + " " + radFemale.Text & vbCrLf)
             End If
 
-            If rad1dose.Checked = True Then
-                Entry.WriteLine(gbxVacc.Text + " " + rad1dose.Text & vbCrLf)
-            ElseIf rad2dose.Checked = True Then
-                Entry.WriteLine(gbxVacc.Text + " " + rad2dose.Text & vbCrLf)
-            ElseIf radBooster.Checked = True Then
-                Entry.WriteLine(gbxVacc.Text + " " + radBooster.Text & vbCrLf)
-            ElseIf rad2booster.Checked = True Then
-                Entry.WriteLine(gbxVacc.Text + " " + rad2booster.Text & vbCrLf)
+            If radYes.Checked = True Then
+                Entry.WriteLine(gbxVacc.Text + " " + radYes.Text & vbCrLf)
             Else
-                Entry.WriteLine(vbCrLf & gbxVacc.Text + " " + radNotyet.Text & vbCrLf)
+                Entry.WriteLine(vbCrLf & gbxVacc.Text + " " + radNo.Text & vbCrLf)
             End If
 
+            If radYes.Checked = True Then
+                Entry.WriteLine(gbxTypeVacc.Text + " " + radFullVac.Text & vbCrLf)
+            Else
+                Entry.WriteLine(vbCrLf & gbxTypeVacc.Text + " " + radBooster.Text & vbCrLf)
+            End If
 
             Entry.WriteLine(gbxQuestion.Text)
             If cbxFever.Checked = True Then
@@ -57,10 +56,10 @@ Public Class Form1
         End Using
         radMale.Checked = False
         radFemale.Checked = False
-        rad1dose.Checked = False
-        rad2dose.Checked = False
+        radYes.Checked = False
+        radNo.Checked = False
+        radFullVac.Checked = False
         radBooster.Checked = False
-        rad2booster.Checked = False
     End Sub
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click

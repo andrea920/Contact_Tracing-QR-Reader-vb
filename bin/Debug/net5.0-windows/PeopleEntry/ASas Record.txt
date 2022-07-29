@@ -1,0 +1,13 @@
+Name: ASas
+Address: aa
+Contact Number: 1123
+Temperature: asdasd
+
+Gender: Male
+
+Vaccination: Yes
+
+Type of Vaccination: Fully Vaccinated
+
+Do you have any of these?
+I don't have any of these
