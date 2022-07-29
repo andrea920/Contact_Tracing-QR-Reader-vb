@@ -107,6 +107,7 @@ Public Class Form1
                 Gender(MyData(4), radFemale, radMale)
                 Vaccine(MyData(5), radNo, radYes)
                 HaveAny(MyData(6), cbxIdont, cbxFever, cbxCoughs, cbxBreathComp, cbxColds, cbxSorethroat)
+                TimeScanner.Stop()
             End If
         End If
     End Sub
