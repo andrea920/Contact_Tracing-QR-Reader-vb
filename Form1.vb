@@ -107,7 +107,12 @@ Public Class Form1
         If pictBxQRCapture.Image IsNot Nothing Then
             If CamResult IsNot Nothing Then
                 Dim ScannedInfo As String = CamResult.ToString()
-                tbxName.Text = ScannedInfo
+                Dim MyData As String() = ScannedInfo.Split("|".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
+                tbxName.Text = MyData(0)
+                tbxAddress.Text = MyData(1)
+                tbxCnum.Text = MyData(2)
+                tbxTemp.Text = MyData(3)
+
                 'TimeScanner.Stop()
             End If
         End If
