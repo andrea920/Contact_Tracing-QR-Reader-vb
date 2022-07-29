@@ -25,17 +25,17 @@ Public Class Form1
             If rad1dose.Checked = True Then
                 Entry.WriteLine(gbxVacc.Text + " " + rad1dose.Text & vbCrLf)
             ElseIf rad2dose.Checked = True Then
-                Entry.WriteLine(vbCrLf & gbxVacc.Text + " " + rad2dose.Text & vbCrLf)
+                Entry.WriteLine(gbxVacc.Text + " " + rad2dose.Text & vbCrLf)
             ElseIf radBooster.Checked = True Then
-                Entry.WriteLine(vbCrLf & gbxVacc.Text + " " + radBooster.Text & vbCrLf)
+                Entry.WriteLine(gbxVacc.Text + " " + radBooster.Text & vbCrLf)
             ElseIf rad2booster.Checked = True Then
-                Entry.WriteLine(vbCrLf & gbxVacc.Text + " " + rad2booster.Text & vbCrLf)
+                Entry.WriteLine(gbxVacc.Text + " " + rad2booster.Text & vbCrLf)
             Else
                 Entry.WriteLine(vbCrLf & gbxVacc.Text + " " + radNotyet.Text & vbCrLf)
             End If
 
-            Entry.WriteLine(gbxQuestion.Text)
 
+            Entry.WriteLine(gbxQuestion.Text)
             If cbxFever.Checked = True Then
                 Entry.WriteLine(cbxFever.Text)
             End If
@@ -55,6 +55,12 @@ Public Class Form1
             End If
             Entry.Close()
         End Using
+        radMale.Checked = False
+        radFemale.Checked = False
+        rad1dose.Checked = False
+        rad2dose.Checked = False
+        radBooster.Checked = False
+        rad2booster.Checked = False
     End Sub
 
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
@@ -87,14 +93,26 @@ Public Class Form1
         CamCapture = New VideoCaptureDevice(ChooseCam(cbCamDevice.SelectedIndex).MonikerString)
         AddHandler CamCapture.NewFrame, New NewFrameEventHandler(AddressOf CamDevice_NewFrame)
         CamCapture.Start()
+        TimeScanner.Start()
     End Sub
 
     Private Sub CamDevice_NewFrame(sender As Object, EventArgs As NewFrameEventArgs)
-        BM = CType(EventArgs.Frame.Clone(), Bitmap)
-        pictBxQRCapture.Image = TryCast(EventArgs.Frame.Clone(), Bitmap)
+        BM = DirectCast(EventArgs.Frame.Clone(), Bitmap)
+        pictBxQRCapture.Image = DirectCast(EventArgs.Frame.Clone(), Bitmap)
     End Sub
 
     Private Sub TimeScanner_Tick(sender As Object, e As EventArgs) Handles TimeScanner.Tick
-
+        Dim CamReader As BarcodeReader = New BarcodeReader()
+        Dim CamResult As Result = CamReader.Decode(DirectCast(pictBxQRCapture.Image, Bitmap))
+        If pictBxQRCapture.Image IsNot Nothing Then
+            If CamResult IsNot Nothing Then
+                tbxName.Text = ToString()
+                'TimeScanner.Stop()
+            End If
+        End If
     End Sub
+
+
+
+
 End Class

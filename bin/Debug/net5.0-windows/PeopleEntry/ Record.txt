@@ -1,0 +1,11 @@
+Name: 
+Address: 
+Contact Number: 
+Temperature: 
+
+Gender: Male
+
+
+Vaccination: No
+
+Do you have any of these?

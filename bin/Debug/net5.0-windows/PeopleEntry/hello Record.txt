@@ -1,0 +1,13 @@
+Name: hello
+Address: asdasd
+Contact Number: 2131312
+Temperature: 44
+
+Gender: Male
+
+
+Vaccination: Booster
+
+Do you have any of these?
+Fever
+Coughs

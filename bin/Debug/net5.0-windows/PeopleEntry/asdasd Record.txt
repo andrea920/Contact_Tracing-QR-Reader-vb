@@ -1,0 +1,12 @@
+Name: asdasd
+Address: asdads
+Contact Number: 123
+Temperature: 32
+
+Gender: Male
+
+Vaccination: 1st Dose
+
+Do you have any of these?
+Fever
+Coughs
