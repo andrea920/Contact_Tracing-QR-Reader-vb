@@ -97,6 +97,7 @@ Public Class Form1
         Dim CamResult As Result = CamReader.Decode(DirectCast(pictBxQRCapture.Image, Bitmap))
         If pictBxQRCapture.Image IsNot Nothing Then
             If CamResult IsNot Nothing Then
+                MsgBox("Your Info Scanned")
                 Dim ScannedInfo As String = CamResult.ToString()
                 Dim MyData As String() = ScannedInfo.Split("|".ToCharArray(), StringSplitOptions.RemoveEmptyEntries)
                 tbxName.Text = MyData(0)
@@ -106,7 +107,6 @@ Public Class Form1
                 Gender(MyData(4), radFemale, radMale)
                 Vaccine(MyData(5), radNo, radYes)
                 HaveAny(MyData(6), cbxIdont, cbxFever, cbxCoughs, cbxBreathComp, cbxColds, cbxSorethroat)
-                TimeScanner.Stop()
             End If
         End If
     End Sub
