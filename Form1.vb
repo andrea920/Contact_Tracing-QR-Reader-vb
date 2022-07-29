@@ -112,6 +112,7 @@ Public Class Form1
                 tbxCnum.Text = MyData(2)
                 tbxTemp.Text = MyData(3)
                 Gender(MyData(4), radFemale, radMale)
+                Vaccine(MyData(5), radNo, radYes)
                 'TimeScanner.Stop()
             End If
         End If
@@ -119,6 +120,13 @@ Public Class Form1
 
     Public Sub Gender(myval, myvar, myvar1)
         If myval = " Female " Then
+            myvar.Checked = True
+        Else
+            myvar1.Checked = True
+        End If
+    End Sub
+    Public Sub Vaccine(myval, myvar, myvar1)
+        If myval = " No " Then
             myvar.Checked = True
         Else
             myvar1.Checked = True
